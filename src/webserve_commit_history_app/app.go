@@ -14,6 +14,7 @@ func main() {
 	var history webserve_commit_history.GitCommitHistory
 	history.Init()
 	history.Directory = "/home/pi/hinst_static_website"
+	history.TextFormat = "<b>%an</b> @ <b>%ad</b>%n<br>%B<br><br>%n%n"
 	server.History = &history
 	webserve_commit_history.InstallShutdownReceiver(
 		func() {

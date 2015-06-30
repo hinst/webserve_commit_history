@@ -26,6 +26,7 @@ func (this *GitCommitHistoryWebServer) ServeHTTP(responseWriter http.ResponseWri
 		responseWriter.Write([]byte(theString))
 	}
 	writeString(this.History.GetText())
+	responseWriter.Header().Set("Content-Type", "text/html; charset=utf-8")
 	this.requestWaitGroup.Done()
 }
 
