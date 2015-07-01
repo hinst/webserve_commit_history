@@ -15,6 +15,7 @@ func main() {
 	history.Init()
 	history.Directory = "/home/pi/hinst_static_website"
 	history.TextFormat = "<b>%an</b> @ <b>%ad</b>%n<br>%B<br><br>%n%n"
+	history.CountOfItems = 20
 	server.History = &history
 	webserve_commit_history.InstallShutdownReceiver(
 		func() {
